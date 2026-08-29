@@ -1,6 +1,16 @@
 const { Telegraf } = require('telegraf');
+const http = require('http');
 
 const bot = new Telegraf(process.env.BOT_TOKEN);
+
+// Render ke port check ko satisfy karne ke liye chhota sa HTTP server
+const PORT = process.env.PORT || 3000;
+http.createServer((req, res) => {
+    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.end('KAREN Bot is running!');
+}).listen(PORT, () => {
+    console.log(`HTTP server is listening on port ${PORT}`);
+});
 
 bot.command('watch', (ctx) => {
     const text = ctx.message.text || '';
