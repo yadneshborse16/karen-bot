@@ -31,7 +31,7 @@ bot.command('watch', (ctx) => {
     const server3Url = `https://netmirror.center/search/${encodedQuery.toLowerCase()}`;
     
     const responseText = 
-        `🎬 Search results for ${query}\n\n` +
+        `“🎬 Search results for ${query}”\n\n` +
         `<a href="${imdbUrl}">IMDb Info</a>\n\n` +
         `Server 1 👉 <a href="${server1Url}">Click Here</a>\n\n` +
         `Server 2 👉 <a href="${server2Url}">Click Here</a>\n\n` +
@@ -52,3 +52,4 @@ bot.launch().then(() => {
 
 process.once('SIGINT', () => bot.stop('SIGINT'));
 process.once('SIGTERM', () => bot.stop('SIGTERM'));
+        
