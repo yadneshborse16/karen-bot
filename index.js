@@ -95,7 +95,6 @@ bot.command('apk', (ctx) => {
     }
     
     const query = args.join(' ');
-    const encodedQuery = encodeURIComponent(query);
     const plusQuery = query.replace(/\s+/g, '%20');
     
     const playStoreUrl = `https://play.google.com/store/search?q=${plusQuery}&c=apps&hl=en_ZA`;
@@ -115,6 +114,43 @@ bot.command('apk', (ctx) => {
         `Server 4 👉 <a href="${modyoloUrl}">Click Here</a>\n\n` +
         `Server 5 👉 <a href="${apkdoneUrl}">Click Here</a>\n\n` +
         `Server 6 👉 <a href="${getmodsapkUrl}">Click Here</a>\n\n` +
+        `🤖 Bot Username: @Karen_mwag_bot\n` +
+        `✨ Created By <a href="https://t.me/ultra_am_hub">Ultra AM Hub</a>`;
+    
+    ctx.reply(responseText, { 
+        parse_mode: 'HTML',
+        disable_web_page_preview: true,
+        reply_parameters: { message_id: ctx.message.message_id }
+    });
+});
+
+// PC Software Search Command (/exe)
+bot.command('exe', (ctx) => {
+    const text = ctx.message.text || '';
+    const args = text.split(' ').slice(1);
+    
+    if (args.length === 0) {
+        return ctx.reply("Software ka naam toh daal bhai! Example: '/exe After effects'", {
+            reply_parameters: { message_id: ctx.message.message_id }
+        });
+    }
+    
+    const query = args.join(' ');
+    const encodedQuery = encodeURIComponent(query);
+    
+    const sourceForgeUrl = `https://sourceforge.net/software/?q=${encodedQuery}`;
+    const fileCrUrl = `https://filecr.com/search/?q=${encodedQuery}`;
+    const getIntoPcUrl = `https://getintopc.com/?s=${encodedQuery}`;
+    const softpediaUrl = `https://www.softpedia.com/dyn-search.php?search_term=${encodedQuery}`;
+    const fileHippoUrl = `https://filehippo.com/search/?q=${encodedQuery}`;
+    
+    const responseText = 
+        `“💻 PC Software search results for ${query}”\n\n` +
+        `<a href="${sourceForgeUrl}">Info About Software</a>\n\n` +
+        `Server 1 👉 <a href="${fileCrUrl}">Click Here</a>\n\n` +
+        `Server 2 👉 <a href="${getIntoPcUrl}">Click Here</a>\n\n` +
+        `Server 3 👉 <a href="${softpediaUrl}">Click Here</a>\n\n` +
+        `Server 4 👉 <a href="${fileHippoUrl}">Click Here</a>\n\n` +
         `🤖 Bot Username: @Karen_mwag_bot\n` +
         `✨ Created By <a href="https://t.me/ultra_am_hub">Ultra AM Hub</a>`;
     
