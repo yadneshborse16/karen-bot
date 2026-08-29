@@ -29,13 +29,13 @@ bot.command('watch', (ctx) => {
     const server3Url = `https://netmirror.center/search/${encodedQuery.toLowerCase()}`;
     
     const responseText = 
-        `🤖 Bot Username: @Karen_mwag_bot\n` +
-        `✨ Created By <a href="https://t.me/ultra_am_hub">Ultra AM Hub</a>\n\n` +
         `🎬 Search results for ${query}\n\n` +
         `<a href="${imdbUrl}">IMDb Info</a>\n\n` +
         `Server 1 👉 <a href="${server1Url}">Click Here</a>\n\n` +
         `Server 2 👉 <a href="${server2Url}">Click Here</a>\n\n` +
-        `Server 3 👉 <a href="${server3Url}">Click Here</a>`;
+        `Server 3 👉 <a href="${server3Url}">Click Here</a>\n\n` +
+        `🤖 Bot Username: @Karen_mwag_bot\n` +
+        `✨ Created By <a href="https://t.me/ultra_am_hub">Ultra AM Hub</a>`;
     
     ctx.reply(responseText, { 
         parse_mode: 'HTML',
@@ -49,4 +49,3 @@ bot.launch().then(() => {
 
 process.once('SIGINT', () => bot.stop('SIGINT'));
 process.once('SIGTERM', () => bot.stop('SIGTERM'));
-        
