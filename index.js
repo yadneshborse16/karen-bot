@@ -47,7 +47,7 @@ bot.command('watch', (ctx) => {
     });
 });
 
-// Anime Search Command
+// Anime Search Command (Includes AniList Info)
 bot.command('anime', (ctx) => {
     const text = ctx.message.text || '';
     const args = text.split(' ').slice(1);
@@ -62,44 +62,17 @@ bot.command('anime', (ctx) => {
     const encodedQuery = encodeURIComponent(query);
     const plusQuery = query.replace(/\s+/g, '+');
     
+    const anilistUrl = `https://anilist.co/search/anime?search=${encodedQuery}`;
     const server1Url = `https://anikoto.cz/filter?keyword=${plusQuery}+`;
     const server2Url = `https://www.animehub4u.in/search?q=${encodedQuery}&m=1`;
     const server3Url = `https://watchanimeworld.one/?s=${encodedQuery.toLowerCase()}`;
     
     const responseText = 
         `“🌸 Anime search results for ${query}”\n\n` +
+        `<a href="${anilistUrl}">AniList Info</a>\n\n` +
         `Server 1 👉 <a href="${server1Url}">Click Here</a>\n\n` +
         `Server 2 👉 <a href="${server2Url}">Click Here</a>\n\n` +
         `Server 3 👉 <a href="${server3Url}">Click Here</a>\n\n` +
-        `🤖 Bot Username: @Karen_mwag_bot\n` +
-        `✨ Created By <a href="https://t.me/ultra_am_hub">Ultra AM Hub</a>`;
-    
-    ctx.reply(responseText, { 
-        parse_mode: 'HTML',
-        disable_web_page_preview: true,
-        reply_parameters: { message_id: ctx.message.message_id }
-    });
-});
-
-// Anime Info Command
-bot.command('animeinfo', (ctx) => {
-    const text = ctx.message.text || '';
-    const args = text.split(' ').slice(1);
-    
-    if (args.length === 0) {
-        return ctx.reply("Anime ka naam toh daal bhai! Example: '/animeinfo One Piece'", {
-            reply_parameters: { message_id: ctx.message.message_id }
-        });
-    }
-    
-    const query = args.join(' ');
-    const encodedQuery = encodeURIComponent(query);
-    
-    const anilistUrl = `https://anilist.co/search/anime?search=${encodedQuery}`;
-    
-    const responseText = 
-        `“🔍 Anime Info results for ${query}”\n\n` +
-        `AniList Info 👉 <a href="${anilistUrl}">Click Here</a>\n\n` +
         `🤖 Bot Username: @Karen_mwag_bot\n` +
         `✨ Created By <a href="https://t.me/ultra_am_hub">Ultra AM Hub</a>`;
     
@@ -116,4 +89,3 @@ bot.launch().then(() => {
 
 process.once('SIGINT', () => bot.stop('SIGINT'));
 process.once('SIGTERM', () => bot.stop('SIGTERM'));
-        
