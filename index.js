@@ -12,6 +12,7 @@ http.createServer((req, res) => {
     console.log(`HTTP server is listening on port ${PORT}`);
 });
 
+// Movie Search Command
 bot.command('watch', (ctx) => {
     const text = ctx.message.text || '';
     const args = text.split(' ').slice(1);
@@ -31,8 +32,42 @@ bot.command('watch', (ctx) => {
     const server3Url = `https://netmirror.center/search/${encodedQuery.toLowerCase()}`;
     
     const responseText = 
-        `“🎬 Search results for '${query}”\n\n` +'
+        `“🎬 Search results for ${query}”\n\n` +
         `<a href="${imdbUrl}">IMDb Info</a>\n\n` +
+        `Server 1 👉 <a href="${server1Url}">Click Here</a>\n\n` +
+        `Server 2 👉 <a href="${server2Url}">Click Here</a>\n\n` +
+        `Server 3 👉 <a href="${server3Url}">Click Here</a>\n\n` +
+        `🤖 Bot Username: @Karen_mwag_bot\n` +
+        `✨ Created By <a href="https://t.me/ultra_am_hub">Ultra AM Hub</a>`;
+    
+    ctx.reply(responseText, { 
+        parse_mode: 'HTML',
+        disable_web_page_preview: true,
+        reply_parameters: { message_id: ctx.message.message_id }
+    });
+});
+
+// Anime Search Command
+bot.command('anime', (ctx) => {
+    const text = ctx.message.text || '';
+    const args = text.split(' ').slice(1);
+    
+    if (args.length === 0) {
+        return ctx.reply("Anime ka naam toh daal bhai! Example: '/anime One Piece'", {
+            reply_parameters: { message_id: ctx.message.message_id }
+        });
+    }
+    
+    const query = args.join(' ');
+    const encodedQuery = encodeURIComponent(query);
+    const plusQuery = query.replace(/\s+/g, '+');
+    
+    const server1Url = `https://anikoto.cz/filter?keyword=${plusQuery}+`;
+    const server2Url = `https://www.animehub4u.in/search?q=${encodedQuery}&m=1`;
+    const server3Url = `https://watchanimeworld.one/?s=${encodedQuery.toLowerCase()}`;
+    
+    const responseText = 
+        `“🌸 Anime search results for ${query}”\n\n` +
         `Server 1 👉 <a href="${server1Url}">Click Here</a>\n\n` +
         `Server 2 👉 <a href="${server2Url}">Click Here</a>\n\n` +
         `Server 3 👉 <a href="${server3Url}">Click Here</a>\n\n` +
@@ -52,4 +87,4 @@ bot.launch().then(() => {
 
 process.once('SIGINT', () => bot.stop('SIGINT'));
 process.once('SIGTERM', () => bot.stop('SIGTERM'));
-        
+                            
