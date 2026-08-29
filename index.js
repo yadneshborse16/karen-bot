@@ -81,10 +81,39 @@ bot.command('anime', (ctx) => {
     });
 });
 
+// Anime Info Command
+bot.command('animeinfo', (ctx) => {
+    const text = ctx.message.text || '';
+    const args = text.split(' ').slice(1);
+    
+    if (args.length === 0) {
+        return ctx.reply("Anime ka naam toh daal bhai! Example: '/animeinfo One Piece'", {
+            reply_parameters: { message_id: ctx.message.message_id }
+        });
+    }
+    
+    const query = args.join(' ');
+    const encodedQuery = encodeURIComponent(query);
+    
+    const anilistUrl = `https://anilist.co/search/anime?search=${encodedQuery}`;
+    
+    const responseText = 
+        `“🔍 Anime Info results for ${query}”\n\n` +
+        `AniList Info 👉 <a href="${anilistUrl}">Click Here</a>\n\n` +
+        `🤖 Bot Username: @Karen_mwag_bot\n` +
+        `✨ Created By <a href="https://t.me/ultra_am_hub">Ultra AM Hub</a>`;
+    
+    ctx.reply(responseText, { 
+        parse_mode: 'HTML',
+        disable_web_page_preview: true,
+        reply_parameters: { message_id: ctx.message.message_id }
+    });
+});
+
 bot.launch().then(() => {
     console.log("KAREN is running successfully on Render!");
 });
 
 process.once('SIGINT', () => bot.stop('SIGINT'));
 process.once('SIGTERM', () => bot.stop('SIGTERM'));
-                            
+        
