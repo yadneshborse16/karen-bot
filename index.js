@@ -33,7 +33,7 @@ bot.command('watch', (ctx) => {
     
     const responseText = 
         `“🎬 Search results for ${query}”\n\n` +
-        `<a href="${imdbUrl}">IMDb Info</a>\n\n` +
+        `<a href="${imdbUrl}">🔍 IMDb Info</a>\n\n` +
         `Server 1 👉 <a href="${server1Url}">Click Here</a>\n\n` +
         `Server 2 👉 <a href="${server2Url}">Click Here</a>\n\n` +
         `Server 3 👉 <a href="${server3Url}">Click Here</a>\n\n` +
@@ -69,7 +69,7 @@ bot.command('anime', (ctx) => {
     
     const responseText = 
         `“🌸 Anime search results for ${query}”\n\n` +
-        `<a href="${anilistUrl}">AniList Info</a>\n\n` +
+        `<a href="${anilistUrl}">🔍 Anime Info</a>\n\n` +
         `Server 1 👉 <a href="${server1Url}">Click Here</a>\n\n` +
         `Server 2 👉 <a href="${server2Url}">Click Here</a>\n\n` +
         `Server 3 👉 <a href="${server3Url}">Click Here</a>\n\n` +
