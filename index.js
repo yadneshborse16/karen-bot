@@ -33,7 +33,7 @@ bot.command('watch', (ctx) => {
     
     const responseText = 
         `“🎬 Search results for ${query}”\n\n` +
-        `<a href="${imdbUrl}">🔍 IMDb Info</a>\n\n` +
+        `<a href="${imdbUrl}">IMDb Info</a>\n\n` +
         `Server 1 👉 <a href="${server1Url}">Click Here</a>\n\n` +
         `Server 2 👉 <a href="${server2Url}">Click Here</a>\n\n` +
         `Server 3 👉 <a href="${server3Url}">Click Here</a>\n\n` +
@@ -47,7 +47,7 @@ bot.command('watch', (ctx) => {
     });
 });
 
-// Anime Search Command (Includes AniList Info)
+// Anime Search Command
 bot.command('anime', (ctx) => {
     const text = ctx.message.text || '';
     const args = text.split(' ').slice(1);
@@ -69,10 +69,52 @@ bot.command('anime', (ctx) => {
     
     const responseText = 
         `“🌸 Anime search results for ${query}”\n\n` +
-        `<a href="${anilistUrl}">🔍 Anime Info</a>\n\n` +
+        `<a href="${anilistUrl}">AniList Info</a>\n\n` +
         `Server 1 👉 <a href="${server1Url}">Click Here</a>\n\n` +
         `Server 2 👉 <a href="${server2Url}">Click Here</a>\n\n` +
         `Server 3 👉 <a href="${server3Url}">Click Here</a>\n\n` +
+        `🤖 Bot Username: @Karen_mwag_bot\n` +
+        `✨ Created By <a href="https://t.me/ultra_am_hub">Ultra AM Hub</a>`;
+    
+    ctx.reply(responseText, { 
+        parse_mode: 'HTML',
+        disable_web_page_preview: true,
+        reply_parameters: { message_id: ctx.message.message_id }
+    });
+});
+
+// APK Search Command
+bot.command('apk', (ctx) => {
+    const text = ctx.message.text || '';
+    const args = text.split(' ').slice(1);
+    
+    if (args.length === 0) {
+        return ctx.reply("App ka naam toh daal bhai! Example: '/apk Temple run'", {
+            reply_parameters: { message_id: ctx.message.message_id }
+        });
+    }
+    
+    const query = args.join(' ');
+    const encodedQuery = encodeURIComponent(query);
+    const plusQuery = query.replace(/\s+/g, '%20');
+    
+    const playStoreUrl = `https://play.google.com/store/search?q=${plusQuery}&c=apps&hl=en_ZA`;
+    const an1Url = `https://an1.com/?story=${plusQuery}&do=search&subaction=search`;
+    const aptoideUrl = `https://en.aptoide.com/search?query=${plusQuery}&type=apps`;
+    const apkpureUrl = `https://apkpure.net/search?q=${plusQuery}`;
+    const modyoloUrl = `https://modyolo.com/?s=${plusQuery}`;
+    const apkdoneUrl = `https://apkdone.com/search/?q=${plusQuery}`;
+    const getmodsapkUrl = `https://getmodsapk.com/search?query=${plusQuery}`;
+    
+    const responseText = 
+        `“📱 APK search results for ${query}”\n\n` +
+        `<a href="${playStoreUrl}">Download From Official Source</a>\n\n` +
+        `Server 1 👉 <a href="${an1Url}">Click Here</a>\n\n` +
+        `Server 2 👉 <a href="${aptoideUrl}">Click Here</a>\n\n` +
+        `Server 3 👉 <a href="${apkpureUrl}">Click Here</a>\n\n` +
+        `Server 4 👉 <a href="${modyoloUrl}">Click Here</a>\n\n` +
+        `Server 5 👉 <a href="${apkdoneUrl}">Click Here</a>\n\n` +
+        `Server 6 👉 <a href="${getmodsapkUrl}">Click Here</a>\n\n` +
         `🤖 Bot Username: @Karen_mwag_bot\n` +
         `✨ Created By <a href="https://t.me/ultra_am_hub">Ultra AM Hub</a>`;
     
