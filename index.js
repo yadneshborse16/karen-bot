@@ -184,7 +184,7 @@ bot.command('pcplay', (ctx) => {
     
     const responseText = 
         `“🎮 PC Game search results for ${query}”\n\n` +
-        `<a href="${steamStoreUrl}">Info About Game</a>\n\n` +
+        `<a href="${steamStoreUrl}">🔍 Info About Game</a>\n\n` +
         `Server 1 👉 <a href="${steamRipUrl}">Click Here</a>\n\n` +
         `Server 2 👉 <a href="${oceansUrl}">Click Here</a>\n\n` +
         `Server 3 👉 <a href="${steamUnlockedUrl}">Click Here</a>\n\n` +
