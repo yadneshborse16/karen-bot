@@ -161,9 +161,48 @@ bot.command('exe', (ctx) => {
     });
 });
 
+// PC Games Search Command (/pcplay)
+bot.command('pcplay', (ctx) => {
+    const text = ctx.message.text || '';
+    const args = text.split(' ').slice(1);
+    
+    if (args.length === 0) {
+        return ctx.reply("Game ka naam toh daal bhai! Example: '/pcplay God of War'", {
+            reply_parameters: { message_id: ctx.message.message_id }
+        });
+    }
+    
+    const query = args.join(' ');
+    const encodedQuery = encodeURIComponent(query);
+    const slugQuery = query.toLowerCase().replace(/\s+/g, '-');
+    
+    const steamStoreUrl = `https://store.steampowered.com/search/?term=${encodedQuery}`;
+    const steamRipUrl = `https://steamrip.com/?s=${encodedQuery}`;
+    const oceansUrl = `https://oceansofgamess.com/?s=${encodedQuery}`;
+    const steamUnlockedUrl = `https://steamunlocked.org/?s=${encodedQuery}`;
+    const ankerGamesUrl = `https://ankergames.net/game/${slugQuery}`;
+    
+    const responseText = 
+        `“🎮 PC Game search results for ${query}”\n\n` +
+        `<a href="${steamStoreUrl}">Info About Game</a>\n\n` +
+        `Server 1 👉 <a href="${steamRipUrl}">Click Here</a>\n\n` +
+        `Server 2 👉 <a href="${oceansUrl}">Click Here</a>\n\n` +
+        `Server 3 👉 <a href="${steamUnlockedUrl}">Click Here</a>\n\n` +
+        `Server 4 👉 <a href="${ankerGamesUrl}">Click Here</a>\n\n` +
+        `🤖 Bot Username: @Karen_mwag_bot\n` +
+        `✨ Created By <a href="https://t.me/ultra_am_hub">Ultra AM Hub</a>`;
+    
+    ctx.reply(responseText, { 
+        parse_mode: 'HTML',
+        disable_web_page_preview: true,
+        reply_parameters: { message_id: ctx.message.message_id }
+    });
+});
+
 bot.launch().then(() => {
     console.log("KAREN is running successfully on Render!");
 });
 
 process.once('SIGINT', () => bot.stop('SIGINT'));
 process.once('SIGTERM', () => bot.stop('SIGTERM'));
+            
