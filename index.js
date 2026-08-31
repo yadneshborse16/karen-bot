@@ -33,7 +33,7 @@ bot.command('watch', (ctx) => {
     
     const responseText = 
         `“🎬 Search results for ${query}”\n\n` +
-        `<a href="${imdbUrl}">IMDb Info</a>\n\n` +
+        `<a href="${imdbUrl}">🔍 IMDb Info</a>\n\n` +
         `Server 1 👉 <a href="${server1Url}">Click Here</a>\n\n` +
         `Server 2 👉 <a href="${server2Url}">Click Here</a>\n\n` +
         `Server 3 👉 <a href="${server3Url}">Click Here</a>\n\n` +
@@ -69,7 +69,7 @@ bot.command('anime', (ctx) => {
     
     const responseText = 
         `“🌸 Anime search results for ${query}”\n\n` +
-        `<a href="${anilistUrl}">AniList Info</a>\n\n` +
+        `<a href="${anilistUrl}">🔍 Anime Info</a>\n\n` +
         `Server 1 👉 <a href="${server1Url}">Click Here</a>\n\n` +
         `Server 2 👉 <a href="${server2Url}">Click Here</a>\n\n` +
         `Server 3 👉 <a href="${server3Url}">Click Here</a>\n\n` +
@@ -107,7 +107,7 @@ bot.command('apk', (ctx) => {
     
     const responseText = 
         `“📱 APK search results for ${query}”\n\n` +
-        `<a href="${playStoreUrl}">Download From Official Source</a>\n\n` +
+        `<a href="${playStoreUrl}">⚠️ Download From Official Source</a>\n\n` +
         `Server 1 👉 <a href="${an1Url}">Click Here</a>\n\n` +
         `Server 2 👉 <a href="${aptoideUrl}">Click Here</a>\n\n` +
         `Server 3 👉 <a href="${apkpureUrl}">Click Here</a>\n\n` +
@@ -146,7 +146,7 @@ bot.command('exe', (ctx) => {
     
     const responseText = 
         `“💻 PC Software search results for ${query}”\n\n` +
-        `<a href="${sourceForgeUrl}">Info About Software</a>\n\n` +
+        `<a href="${sourceForgeUrl}">🔍 Info About Software</a>\n\n` +
         `Server 1 👉 <a href="${fileCrUrl}">Click Here</a>\n\n` +
         `Server 2 👉 <a href="${getIntoPcUrl}">Click Here</a>\n\n` +
         `Server 3 👉 <a href="${softpediaUrl}">Click Here</a>\n\n` +
