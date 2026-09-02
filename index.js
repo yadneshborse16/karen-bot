@@ -219,6 +219,7 @@ bot.command('scenepack', (ctx) => {
     const scenepacksUrl = `https://scenepacks.com/search?q=${plusQuery}`;
     const editpacksMovieUrl = `https://editpacks.org/search?q=${plusQuery}`;
     const hdtwixtorUrl = `https://hdtwixtor.com/?s=${plusQuery.toLowerCase()}`;
+    const videomonUrl = `https://videomon.biz/?q=${plusQuery}`;
     
     // Anime Scenepack Links
     const animeClipsUrl = `https://animeclips.online/?s=${encodedQuery.toLowerCase()}`;
@@ -229,7 +230,8 @@ bot.command('scenepack', (ctx) => {
         `<i>Search results for ${query}</i>\n\n` +
         `Server 1 👉 <a href="${scenepacksUrl}">Click Here</a>\n` +
         `Server 2 👉 <a href="${editpacksMovieUrl}">Click Here</a>\n` +
-        `Server 3 👉 <a href="${hdtwixtorUrl}">Click Here</a>\n\n` +
+        `Server 3 👉 <a href="${hdtwixtorUrl}">Click Here</a>\n` +
+        `Server 4 (Best For Hindi Movies) 👉 <a href="${videomonUrl}">Click Here</a>\n\n` +
         `━━━━━━━━━━━━━━━━━━━\n\n` +
         `🌸 <b>Anime Scenepack</b>\n` +
         `<i>Search results for ${query}</i>\n\n` +
@@ -251,4 +253,3 @@ bot.launch().then(() => {
 
 process.once('SIGINT', () => bot.stop('SIGINT'));
 process.once('SIGTERM', () => bot.stop('SIGTERM'));
-                                            
