@@ -200,10 +200,55 @@ bot.command('pcplay', (ctx) => {
     });
 });
 
+// Scenepack Search Command (/scenepack)
+bot.command('scenepack', (ctx) => {
+    const text = ctx.message.text || '';
+    const args = text.split(' ').slice(1);
+    
+    if (args.length === 0) {
+        return ctx.reply("Naam toh daal bhai! Example: '/scenepack Iron Man' ya '/scenepack Naruto'", {
+            reply_parameters: { message_id: ctx.message.message_id }
+        });
+    }
+    
+    const query = args.join(' ');
+    const encodedQuery = encodeURIComponent(query);
+    const plusQuery = query.replace(/\s+/g, '+');
+    
+    // Movie & Webseries Scenepack Links
+    const scenepacksUrl = `https://scenepacks.com/search?q=${plusQuery}`;
+    const editpacksMovieUrl = `https://editpacks.org/search?q=${plusQuery}`;
+    const hdtwixtorUrl = `https://hdtwixtor.com/?s=${plusQuery.toLowerCase()}`;
+    
+    // Anime Scenepack Links
+    const animeClipsUrl = `https://animeclips.online/?s=${encodedQuery.toLowerCase()}`;
+    const editpacksAnimeUrl = `https://editpacks.org/search?q=${plusQuery}`;
+    
+    const responseText = 
+        `🎬 <b>Movie & Webseries Scenepack</b>\n` +
+        `<i>Search results for ${query}</i>\n\n` +
+        `Server 1 👉 <a href="${scenepacksUrl}">Click Here</a>\n` +
+        `Server 2 👉 <a href="${editpacksMovieUrl}">Click Here</a>\n` +
+        `Server 3 👉 <a href="${hdtwixtorUrl}">Click Here</a>\n\n` +
+        `━━━━━━━━━━━━━━━━━━━\n\n` +
+        `🌸 <b>Anime Scenepack</b>\n` +
+        `<i>Search results for ${query}</i>\n\n` +
+        `Server 1 👉 <a href="${animeClipsUrl}">Click Here</a>\n` +
+        `Server 2 👉 <a href="${editpacksAnimeUrl}">Click Here</a>\n\n` +
+        `🤖 Bot Username: @Karen_mwag_bot\n` +
+        `✨ Created By <a href="https://t.me/ultra_am_hub">Ultra AM Hub</a>`;
+    
+    ctx.reply(responseText, { 
+        parse_mode: 'HTML',
+        disable_web_page_preview: true,
+        reply_parameters: { message_id: ctx.message.message_id }
+    });
+});
+
 bot.launch().then(() => {
     console.log("KAREN is running successfully on Render!");
 });
 
 process.once('SIGINT', () => bot.stop('SIGINT'));
 process.once('SIGTERM', () => bot.stop('SIGTERM'));
-            
+                                            
