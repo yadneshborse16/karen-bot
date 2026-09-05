@@ -37,7 +37,7 @@ bot.command('watch', (ctx) => {
         `Server 1 👉 <a href="${server1Url}">Click Here</a>\n\n` +
         `Server 2 👉 <a href="${server2Url}">Click Here</a>\n\n` +
         `Server 3 👉 <a href="${server3Url}">Click Here</a>\n\n` +
-        `⚠️ If You Don't Get Your Results Then Use @KWRBTnybot\n\n` +
+        `⚠️ If You Don't Get Your Results Then Use @PhonoFilm0Bot\n\n` +
         `🤖 Bot Username: @Karen_mwag_bot\n` +
         `✨ Created By <a href="https://t.me/ultra_am_hub">Ultra AM Hub</a>`;
     
