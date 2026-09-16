@@ -39,7 +39,7 @@ bot.command('watch', (ctx) => {
         `Server 2 👉 <a href="${server2Url}">Click Here</a>\n\n` +
         `Server 3 👉 <a href="${server3Url}">Click Here</a>\n\n` +
         `⚠️ If You Don't Get Your Results Then Use @KWRBTnybot\n\n` +
-        `🤖 Bot Username: @Karen_mwag_bot\n` +
+        `🤖 Bot Username: @Karen_uh_bot\n` +
         `✨ Created By <a href="https://t.me/ultra_am_hub">Ultra AM Hub</a>`;
     
     ctx.reply(responseText, { 
@@ -75,7 +75,7 @@ bot.command('anime', (ctx) => {
         `Server 1 👉 <a href="${server1Url}">Click Here</a>\n\n` +
         `Server 2 👉 <a href="${server2Url}">Click Here</a>\n\n` +
         `Server 3 👉 <a href="${server3Url}">Click Here</a>\n\n` +
-        `🤖 Bot Username: @Karen_mwag_bot\n` +
+        `🤖 Bot Username: @Karen_uh_bot\n` +
         `✨ Created By <a href="https://t.me/ultra_am_hub">Ultra AM Hub</a>`;
     
     ctx.reply(responseText, { 
@@ -116,7 +116,7 @@ bot.command('apk', (ctx) => {
         `Server 4 👉 <a href="${modyoloUrl}">Click Here</a>\n\n` +
         `Server 5 👉 <a href="${apkdoneUrl}">Click Here</a>\n\n` +
         `Server 6 👉 <a href="${getmodsapkUrl}">Click Here</a>\n\n` +
-        `🤖 Bot Username: @Karen_mwag_bot\n` +
+        `🤖 Bot Username: @Karen_uh_bot\n` +
         `✨ Created By <a href="https://t.me/ultra_am_hub">Ultra AM Hub</a>`;
     
     ctx.reply(responseText, { 
@@ -153,7 +153,7 @@ bot.command('exe', (ctx) => {
         `Server 2 👉 <a href="${getIntoPcUrl}">Click Here</a>\n\n` +
         `Server 3 👉 <a href="${softpediaUrl}">Click Here</a>\n\n` +
         `Server 4 👉 <a href="${fileHippoUrl}">Click Here</a>\n\n` +
-        `🤖 Bot Username: @Karen_mwag_bot\n` +
+        `🤖 Bot Username: @Karen_uh_bot\n` +
         `✨ Created By <a href="https://t.me/ultra_am_hub">Ultra AM Hub</a>`;
     
     ctx.reply(responseText, { 
@@ -191,7 +191,7 @@ bot.command('pcplay', (ctx) => {
         `Server 2 👉 <a href="${oceansUrl}">Click Here</a>\n\n` +
         `Server 3 👉 <a href="${steamUnlockedUrl}">Click Here</a>\n\n` +
         `Server 4 👉 <a href="${ankerGamesUrl}">Click Here</a>\n\n` +
-        `🤖 Bot Username: @Karen_mwag_bot\n` +
+        `🤖 Bot Username: @Karen_uh_bot\n` +
         `✨ Created By <a href="https://t.me/ultra_am_hub">Ultra AM Hub</a>`;
     
     ctx.reply(responseText, { 
@@ -238,7 +238,7 @@ bot.command('scenepack', (ctx) => {
         `<i>Search results for ${query}</i>\n\n` +
         `Server 1 👉 <a href="${animeClipsUrl}">Click Here</a>\n` +
         `Server 2 👉 <a href="${editpacksAnimeUrl}">Click Here</a>\n\n` +
-        `🤖 Bot Username: @Karen_mwag_bot\n` +
+        `🤖 Bot Username: @Karen_uh_bot\n` +
         `✨ Created By <a href="https://t.me/ultra_am_hub">Ultra AM Hub</a>`;
     
     ctx.reply(responseText, { 
@@ -254,4 +254,4 @@ bot.launch().then(() => {
 
 process.once('SIGINT', () => bot.stop('SIGINT'));
 process.once('SIGTERM', () => bot.stop('SIGTERM'));
-        
+    
