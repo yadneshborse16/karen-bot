@@ -1,7 +1,8 @@
 const { Telegraf } = require('telegraf');
 const http = require('http');
 
-const bot = new Telegraf(process.env.BOT_TOKEN);
+const BOT_TOKEN = '8956623825:AAHlJ67P8HARMuq9IwGg5oL4G_ZkdeY46KI';
+const bot = new Telegraf(BOT_TOKEN);
 
 // Render ke port check ko satisfy karne ke liye chhota sa HTTP server
 const PORT = process.env.PORT || 3000;
@@ -37,7 +38,7 @@ bot.command('watch', (ctx) => {
         `Server 1 👉 <a href="${server1Url}">Click Here</a>\n\n` +
         `Server 2 👉 <a href="${server2Url}">Click Here</a>\n\n` +
         `Server 3 👉 <a href="${server3Url}">Click Here</a>\n\n` +
-        `⚠️ If You Don't Get Your Results Then Use @PhonoFilm0Bot\n\n` +
+        `⚠️ If You Don't Get Your Results Then Use @KWRBTnybot\n\n` +
         `🤖 Bot Username: @Karen_mwag_bot\n` +
         `✨ Created By <a href="https://t.me/ultra_am_hub">Ultra AM Hub</a>`;
     
@@ -253,3 +254,4 @@ bot.launch().then(() => {
 
 process.once('SIGINT', () => bot.stop('SIGINT'));
 process.once('SIGTERM', () => bot.stop('SIGTERM'));
+        
