@@ -38,7 +38,12 @@ bot.command('watch', (ctx) => {
         `Server 1 👉 <a href="${server1Url}">Click Here</a>\n\n` +
         `Server 2 👉 <a href="${server2Url}">Click Here</a>\n\n` +
         `Server 3 👉 <a href="${server3Url}">Click Here</a>\n\n` +
-        `⚠️ If You Don't Get Your Results Then Use @KWRBTnybot\n\n` +
+        `⚠️ If You Don't Get Your Results Then Use:\n` +
+        `• @KWRBTnybot\n` +
+        `• @PhonoFilm0Bot\n` +
+        `• @iPapkorn_Moviesbot\n` +
+        `• @ProSearchMBot\n` +
+        `• @CricfyPikashowNetMirrorBot\n\n` +
         `🤖 Bot Username: @Karen_uh_bot\n` +
         `✨ Created By <a href="https://t.me/ultra_am_hub">Ultra AM Hub</a>`;
     
@@ -237,7 +242,35 @@ bot.command('scenepack', (ctx) => {
         `🌸 <b>Anime Scenepack</b>\n` +
         `<i>Search results for ${query}</i>\n\n` +
         `Server 1 👉 <a href="${animeClipsUrl}">Click Here</a>\n` +
-        `Server 2 👉 <a href="${editpacksAnimeUrl}">Click Here</a>\n\n` +
+        `Server 2 👉 <a href="${editpacksAnimeUrl}">Click Here</a>\n` +
+        `🤖 Bot Username: @Karen_uh_bot\n` +
+        `✨ Created By <a href="https://t.me/ultra_am_hub">Ultra AM Hub</a>`;
+    
+    ctx.reply(responseText, { 
+        parse_mode: 'HTML',
+        disable_web_page_preview: true,
+        reply_parameters: { message_id: ctx.message.message_id }
+    });
+});
+
+// After Effects Plugin Search Command (/aeplugin)
+bot.command('aeplugin', (ctx) => {
+    const text = ctx.message.text || '';
+    const args = text.split(' ').slice(1);
+    
+    if (args.length === 0) {
+        return ctx.reply("Plugin ka naam toh daal bhai! Example: '/aeplugin deep Glow'", {
+            reply_parameters: { message_id: ctx.message.message_id }
+        });
+    }
+    
+    const query = args.join(' ');
+    const plusQuery = query.replace(/\s+/g, '+');
+    const keyflameUrl = `https://keyfla.me/search?q=${plusQuery}&mode=exact&view=detailed&platform=windows&section=all`;
+    
+    const responseText = 
+        `“⚡ Search results for ${query}”\n\n` +
+        `<a href="${keyflameUrl}">Click Here</a>\n\n` +
         `🤖 Bot Username: @Karen_uh_bot\n` +
         `✨ Created By <a href="https://t.me/ultra_am_hub">Ultra AM Hub</a>`;
     
@@ -254,4 +287,3 @@ bot.launch().then(() => {
 
 process.once('SIGINT', () => bot.stop('SIGINT'));
 process.once('SIGTERM', () => bot.stop('SIGTERM'));
-    
